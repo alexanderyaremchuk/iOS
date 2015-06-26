@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DCD49131B2ECBAD00C17F94 /* QueueITLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCD49121B2ECBAD00C17F94 /* QueueITLib.h */; };
-		1DCD49151B2ECBAD00C17F94 /* QueueITLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD49141B2ECBAD00C17F94 /* QueueITLib.m */; };
 		1DCD491B1B2ECBAD00C17F94 /* libQueueITLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCD490F1B2ECBAD00C17F94 /* libQueueITLib.a */; };
+		1DCD49961B2F0F5A00C17F94 /* Turn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD49951B2F0F5A00C17F94 /* Turn.m */; };
+		1DCD499A1B2F0FAB00C17F94 /* QueueITViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD49991B2F0FAB00C17F94 /* QueueITViewController.m */; };
+		1DCD499D1B2F0FF200C17F94 /* QueueITEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD499C1B2F0FF200C17F94 /* QueueITEngine.m */; };
+		1DCD49A11B2F113200C17F94 /* Turn.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCD49941B2F0F5A00C17F94 /* Turn.h */; };
+		1DCD49A21B2F113B00C17F94 /* QueueITViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCD49981B2F0FAB00C17F94 /* QueueITViewController.h */; };
+		1DCD49A31B2F114600C17F94 /* QueueITEngine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1DCD499B1B2F0FF200C17F94 /* QueueITEngine.h */; };
+		1DCD49E51B30588000C17F94 /* QueueStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD49E41B30588000C17F94 /* QueueStatus.m */; };
+		1DCD4A0D1B3D4DC700C17F94 /* IOSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD4A0C1B3D4DC700C17F94 /* IOSUtils.m */; };
+		1DCD4A111B3D4E4900C17F94 /* QueueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD4A101B3D4E4900C17F94 /* QueueService.m */; };
+		1DCD4A141B3D4E8400C17F94 /* QueueService_NSURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD4A131B3D4E8400C17F94 /* QueueService_NSURLConnection.m */; };
+		1DCD4A171B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD4A161B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +38,9 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				1DCD49131B2ECBAD00C17F94 /* QueueITLib.h in CopyFiles */,
+				1DCD49A31B2F114600C17F94 /* QueueITEngine.h in CopyFiles */,
+				1DCD49A21B2F113B00C17F94 /* QueueITViewController.h in CopyFiles */,
+				1DCD49A11B2F113200C17F94 /* Turn.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,10 +48,24 @@
 
 /* Begin PBXFileReference section */
 		1DCD490F1B2ECBAD00C17F94 /* libQueueITLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQueueITLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DCD49121B2ECBAD00C17F94 /* QueueITLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueITLib.h; sourceTree = "<group>"; };
-		1DCD49141B2ECBAD00C17F94 /* QueueITLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueueITLib.m; sourceTree = "<group>"; };
 		1DCD491A1B2ECBAD00C17F94 /* QueueITLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueITLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCD49201B2ECBAD00C17F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DCD49941B2F0F5A00C17F94 /* Turn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Turn.h; sourceTree = "<group>"; };
+		1DCD49951B2F0F5A00C17F94 /* Turn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Turn.m; sourceTree = "<group>"; };
+		1DCD49981B2F0FAB00C17F94 /* QueueITViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueITViewController.h; sourceTree = "<group>"; };
+		1DCD49991B2F0FAB00C17F94 /* QueueITViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueITViewController.m; sourceTree = "<group>"; };
+		1DCD499B1B2F0FF200C17F94 /* QueueITEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueITEngine.h; sourceTree = "<group>"; };
+		1DCD499C1B2F0FF200C17F94 /* QueueITEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueITEngine.m; sourceTree = "<group>"; };
+		1DCD49E31B30588000C17F94 /* QueueStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueStatus.h; sourceTree = "<group>"; };
+		1DCD49E41B30588000C17F94 /* QueueStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueStatus.m; sourceTree = "<group>"; };
+		1DCD4A0B1B3D4DC700C17F94 /* IOSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSUtils.h; sourceTree = "<group>"; };
+		1DCD4A0C1B3D4DC700C17F94 /* IOSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSUtils.m; sourceTree = "<group>"; };
+		1DCD4A0F1B3D4E4900C17F94 /* QueueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueService.h; sourceTree = "<group>"; };
+		1DCD4A101B3D4E4900C17F94 /* QueueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueService.m; sourceTree = "<group>"; };
+		1DCD4A121B3D4E8400C17F94 /* QueueService_NSURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueService_NSURLConnection.h; sourceTree = "<group>"; };
+		1DCD4A131B3D4E8400C17F94 /* QueueService_NSURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueService_NSURLConnection.m; sourceTree = "<group>"; };
+		1DCD4A151B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueService_NSURLConnectionRequest.h; sourceTree = "<group>"; };
+		1DCD4A161B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueService_NSURLConnectionRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +108,11 @@
 		1DCD49111B2ECBAD00C17F94 /* QueueITLib */ = {
 			isa = PBXGroup;
 			children = (
-				1DCD49121B2ECBAD00C17F94 /* QueueITLib.h */,
-				1DCD49141B2ECBAD00C17F94 /* QueueITLib.m */,
+				1DCD4A0E1B3D4E2F00C17F94 /* Services */,
+				1DCD49971B2F0F8700C17F94 /* Controllers */,
+				1DCD49931B2F0F3D00C17F94 /* Model */,
+				1DCD499B1B2F0FF200C17F94 /* QueueITEngine.h */,
+				1DCD499C1B2F0FF200C17F94 /* QueueITEngine.m */,
 			);
 			path = QueueITLib;
 			sourceTree = "<group>";
@@ -103,6 +131,41 @@
 				1DCD49201B2ECBAD00C17F94 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DCD49931B2F0F3D00C17F94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DCD49941B2F0F5A00C17F94 /* Turn.h */,
+				1DCD49951B2F0F5A00C17F94 /* Turn.m */,
+				1DCD49E31B30588000C17F94 /* QueueStatus.h */,
+				1DCD49E41B30588000C17F94 /* QueueStatus.m */,
+				1DCD4A0B1B3D4DC700C17F94 /* IOSUtils.h */,
+				1DCD4A0C1B3D4DC700C17F94 /* IOSUtils.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1DCD49971B2F0F8700C17F94 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DCD49981B2F0FAB00C17F94 /* QueueITViewController.h */,
+				1DCD49991B2F0FAB00C17F94 /* QueueITViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1DCD4A0E1B3D4E2F00C17F94 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1DCD4A0F1B3D4E4900C17F94 /* QueueService.h */,
+				1DCD4A101B3D4E4900C17F94 /* QueueService.m */,
+				1DCD4A121B3D4E8400C17F94 /* QueueService_NSURLConnection.h */,
+				1DCD4A131B3D4E8400C17F94 /* QueueService_NSURLConnection.m */,
+				1DCD4A151B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.h */,
+				1DCD4A161B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DCD49151B2ECBAD00C17F94 /* QueueITLib.m in Sources */,
+				1DCD49E51B30588000C17F94 /* QueueStatus.m in Sources */,
+				1DCD499D1B2F0FF200C17F94 /* QueueITEngine.m in Sources */,
+				1DCD4A171B3D4ECC00C17F94 /* QueueService_NSURLConnectionRequest.m in Sources */,
+				1DCD4A0D1B3D4DC700C17F94 /* IOSUtils.m in Sources */,
+				1DCD49961B2F0F5A00C17F94 /* Turn.m in Sources */,
+				1DCD4A141B3D4E8400C17F94 /* QueueService_NSURLConnection.m in Sources */,
+				1DCD499A1B2F0FAB00C17F94 /* QueueITViewController.m in Sources */,
+				1DCD4A111B3D4E4900C17F94 /* QueueService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +432,7 @@
 				1DCD49251B2ECBAD00C17F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DCD49261B2ECBAD00C17F94 /* Build configuration list for PBXNativeTarget "QueueITLibTests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +441,7 @@
 				1DCD49281B2ECBAD00C17F94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
