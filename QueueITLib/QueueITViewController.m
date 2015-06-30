@@ -10,12 +10,11 @@
 @property (nonatomic, strong)UIActivityIndicatorView* spinner;
 @property (nonatomic, strong)NSString* customerId;
 @property (nonatomic, strong)NSString* eventId;
+@property BOOL isQueuePassed;
 
 @end
 
 @implementation QueueITViewController
-
-static int loadCount = 0;
 
 -(instancetype)initWithHost:(UIViewController *)host
                 queueEngine:(QueueITEngine*) engine
@@ -30,6 +29,7 @@ static int loadCount = 0;
         self.queueUrl = queueUrl;
         self.customerId = customerId;
         self.eventId = eventId;
+        self.isQueuePassed = NO;
     }
     return self;
 }
@@ -65,14 +65,16 @@ static int loadCount = 0;
     [self.spinner stopAnimating];
     if (![self.webView isLoading])
     {
-        loadCount++;
         [self runAsync];
     }
-    
-    //if loadCount > 1 -> consider what to do here instead of running [self runAsync]
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    NSLog(@"Failed to load web view. %@", error.description);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    [self.host dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)runAsync
@@ -80,8 +82,12 @@ static int loadCount = 0;
     NSString* queueId = [self getQueueId];
     if (queueId)
     {
-        [self.engine raiseQueuePassed:queueId];
-        [self.host dismissModalViewControllerAnimated:YES];
+        if (!self.isQueuePassed)
+        {
+            self.isQueuePassed = YES;
+            [self.engine raiseQueuePassed:queueId];
+            [self.host dismissViewControllerAnimated:YES completion:nil];
+        }
     }
     else
     {

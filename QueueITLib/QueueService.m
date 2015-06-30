@@ -35,8 +35,7 @@ static NSString * const API_ROOT = @"http://%@-%@.test-q.queue-it.net/api/queue"
     urlAsString = [urlAsString stringByAppendingString:[NSString stringWithFormat:@"/%@", eventorAliasId]];
     urlAsString = [urlAsString stringByAppendingString:[NSString stringWithFormat:@"/appenqueue"]];
     
-    return [self submitPUTPath:urlAsString
-                          body:bodyDict
+    return [self submitPUTPath:urlAsString body:bodyDict
                        success:^(NSData *data)
             {
                 NSError *error = nil;

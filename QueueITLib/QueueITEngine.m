@@ -61,7 +61,7 @@
                                                                      queueEngine:self
                                                                         queueUrl:queueUrl
                                                                       customerId:customerId eventId:eventId];
-    [host presentModalViewController:queueVC animated:YES];
+    [host presentViewController:queueVC animated:YES completion:nil];
 }
 
 -(void)tryEnqueue:(UIViewController *)host customerId:(NSString*)customerId eventOrAliasId:(NSString*)eventOrAliasId
@@ -81,19 +81,23 @@
          {
              [self handleServerError:queueStatus.errorType errorMessage:queueStatus.errorMessage];
          }
-         if (queueStatus.queueId != (id)[NSNull null] && queueStatus.queueUrlString == (id)[NSNull null] && queueStatus.requeryInterval == 0) //SafetyNet
+         //SafetyNet
+         if (queueStatus.queueId != (id)[NSNull null] && queueStatus.queueUrlString == (id)[NSNull null] && queueStatus.requeryInterval == 0)
          {
          }
-         else if (queueStatus.queueId != (id)[NSNull null] && queueStatus.queueUrlString != (id)[NSNull null] && queueStatus.requeryInterval == 0) //InQueue
+         //InQueue
+         else if (queueStatus.queueId != (id)[NSNull null] && queueStatus.queueUrlString != (id)[NSNull null] && queueStatus.requeryInterval == 0)
          {
              [self showQueue:host queueUrl:queueStatus.queueUrlString customerId:customerId eventId:eventOrAliasId];
              [self updateCache:queueStatus.queueUrlString urlTTL:queueStatus.queueUrlTTL customerId:customerId eventId:eventOrAliasId];
          }
-         else if (queueStatus.queueId == (id)[NSNull null] && queueStatus.queueUrlString != (id)[NSNull null] && queueStatus.requeryInterval == 0) //Idle
+         //Idle
+         else if (queueStatus.queueId == (id)[NSNull null] && queueStatus.queueUrlString != (id)[NSNull null] && queueStatus.requeryInterval == 0)
          {
              [self showQueue:host queueUrl:queueStatus.queueUrlString customerId:customerId eventId:eventOrAliasId];
          }
-         else if (queueStatus.requeryInterval > 0) //Disabled
+         //Disabled
+         else if (queueStatus.requeryInterval > 0)
          {
              dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                  [NSThread sleepForTimeInterval:queueStatus.requeryInterval];
@@ -105,7 +109,7 @@
      }
         failure:^(NSError *error)
      {
-         
+         @throw [NSException exceptionWithName:@"QueueITUnexpectedException" reason:[NSString stringWithFormat:@"%@", error.description] userInfo:nil];
      }];
 }
 
@@ -117,11 +121,11 @@
     }
     else if ([errorType isEqualToString:@"Runtime"])
     {
-        @throw [NSException exceptionWithName:@"QueueITRuntimeException" reason:errorMessage userInfo:nil];
+        @throw [NSException exceptionWithName:@"QueueITUnexpectedException" reason:errorMessage userInfo:nil];
     }
     else if ([errorType isEqualToString:@"Validation"])
     {
-        @throw [NSException exceptionWithName:@"QueueITValidationException" reason:errorMessage userInfo:nil];
+        @throw [NSException exceptionWithName:@"QueueITUnexpectedException" reason:errorMessage userInfo:nil];
     }
 }
 
