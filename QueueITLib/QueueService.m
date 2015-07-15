@@ -2,7 +2,7 @@
 #import "QueueService_NSURLConnection.h"
 
 static QueueService *SharedInstance;
-static NSString * const API_ROOT = @"http://%@-%@.test-q.queue-it.net/api/queue";
+static NSString * const API_ROOT = @"http://%@-%@.queue-it.net/api/queue";
 
 @implementation QueueService
 
@@ -21,13 +21,17 @@ static NSString * const API_ROOT = @"http://%@-%@.test-q.queue-it.net/api/queue"
              userId:(NSString *)userId
           userAgent:(NSString *)userAgent
             appType:(NSString*)appType
+         layoutName:(NSString*)layoutName
+           language:(NSString*)language
             success:(void (^)(QueueStatus *))success
             failure:(QueueServiceFailure)failure
 {
     NSDictionary* bodyDict = @{
                                @"userId": userId,
                                @"userAgent": userAgent,
-                               @"appType":appType
+                               @"appType":appType,
+                               @"layoutName":layoutName,
+                               @"language":language
                                };
     
     NSString* urlAsString = [NSString stringWithFormat:API_ROOT, eventorAliasId, customerId];

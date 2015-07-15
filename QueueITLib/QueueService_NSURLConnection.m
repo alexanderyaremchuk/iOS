@@ -37,7 +37,7 @@
     return connectionID;
 }
 
-#pragma mark - CCVChatcaveService_NSURLConnectionRequestDelegate
+#pragma mark - NSURLConnectionRequestDelegate
 
 - (void)requestDidComplete:(QueueService_NSURLConnectionRequest *)request
 {

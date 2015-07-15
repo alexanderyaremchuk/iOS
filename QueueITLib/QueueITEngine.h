@@ -9,7 +9,9 @@
 
 -(instancetype)initWithHost:(UIViewController *)host
                  customerId:(NSString*)customerId
-             eventOrAliasId:(NSString*)eventOrAliasId;
+             eventOrAliasId:(NSString*)eventOrAliasId
+                 layoutName:(NSString*)layoutName
+                   language:(NSString*)language;
 
 -(void)run;
 -(void)raiseQueuePassed:(NSString *)queueId;
